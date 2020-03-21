@@ -1,0 +1,6 @@
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\bin\Debug\netcoreapp2.1\UpcomingMovies.Common.deps.json
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\bin\Debug\netcoreapp2.1\UpcomingMovies.Common.dll
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\obj\Debug\netcoreapp2.1\UpcomingMovies.Common.csprojAssemblyReference.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\obj\Debug\netcoreapp2.1\UpcomingMovies.Common.csproj.CoreCompileInputs.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\obj\Debug\netcoreapp2.1\UpcomingMovies.Common.AssemblyInfoInputs.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\UpcomingMovies.Common\obj\Debug\netcoreapp2.1\UpcomingMovies.Common.AssemblyInfo.cs

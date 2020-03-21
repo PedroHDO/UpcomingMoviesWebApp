@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{A7279840-04BB-4F76-AAB3-A4A948FF58DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F013B3C-7D9C-4DD9-A8F7-F4D4FC7353A8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMovies.Common", "backend\UpcomingMovies.Common\UpcomingMovies.Common.csproj", "{2797E173-FA04-403B-B3EC-5D609CB8007A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMovies.Domain", "backend\UpcomingMovies.Domain\UpcomingMovies.Domain.csproj", "{E3DACFF8-5345-432F-B76B-73E5F5983F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMovies.Infra.Data", "backend\UpcomingMovies.Infra.Data\UpcomingMovies.Infra.Data.csproj", "{2A77A43E-3AE8-4903-817C-33121269FE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMovies.WebApi", "backend\UpcomingMovies.WebApi\UpcomingMovies.WebApi.csproj", "{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4B10E389-5599-46C2-998B-E52BD70507BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpcomingMovies.Infra.Data.Test", "backend\tests\UpcomingMovies.Infra.Data.Test\UpcomingMovies.Infra.Data.Test.csproj", "{ADC06D8F-A564-484F-9043-45635C093843}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2797E173-FA04-403B-B3EC-5D609CB8007A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2797E173-FA04-403B-B3EC-5D609CB8007A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2797E173-FA04-403B-B3EC-5D609CB8007A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2797E173-FA04-403B-B3EC-5D609CB8007A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DACFF8-5345-432F-B76B-73E5F5983F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DACFF8-5345-432F-B76B-73E5F5983F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DACFF8-5345-432F-B76B-73E5F5983F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DACFF8-5345-432F-B76B-73E5F5983F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A77A43E-3AE8-4903-817C-33121269FE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A77A43E-3AE8-4903-817C-33121269FE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A77A43E-3AE8-4903-817C-33121269FE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A77A43E-3AE8-4903-817C-33121269FE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADC06D8F-A564-484F-9043-45635C093843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADC06D8F-A564-484F-9043-45635C093843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADC06D8F-A564-484F-9043-45635C093843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADC06D8F-A564-484F-9043-45635C093843}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2797E173-FA04-403B-B3EC-5D609CB8007A} = {77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}
+		{E3DACFF8-5345-432F-B76B-73E5F5983F24} = {77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}
+		{2A77A43E-3AE8-4903-817C-33121269FE16} = {77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}
+		{9CCA2183-7BF8-4043-A6A9-4E0CE12A718D} = {77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}
+		{4B10E389-5599-46C2-998B-E52BD70507BE} = {77A2132B-B43C-43BC-A76F-8A3AC3C1AD9C}
+		{ADC06D8F-A564-484F-9043-45635C093843} = {4B10E389-5599-46C2-998B-E52BD70507BE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79743136-7936-4946-83E8-ABCF655743D8}
+	EndGlobalSection
+EndGlobal

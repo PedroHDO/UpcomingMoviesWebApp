@@ -1,0 +1,11 @@
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.deps.json
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.runtimeconfig.json
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.runtimeconfig.dev.json
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\bin\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.dll
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\obj\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.csprojAssemblyReference.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\obj\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.csproj.CoreCompileInputs.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\obj\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.AssemblyInfoInputs.cache
+C:\Users\pedro\source\repos\UpcomingMoviesWebApp\backend\tests\UpcomingMovies.Infra.Data.Test\obj\Debug\netcoreapp2.1\UpcomingMovies.Infra.Data.Test.AssemblyInfo.cs

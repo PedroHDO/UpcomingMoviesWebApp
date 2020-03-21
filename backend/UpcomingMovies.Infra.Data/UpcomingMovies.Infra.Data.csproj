@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UpcomingMovies.Common\UpcomingMovies.Common.csproj" />
+    <ProjectReference Include="..\UpcomingMovies.Domain\UpcomingMovies.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
