@@ -32,13 +32,7 @@ namespace UpcomingMovies.WebApi
                        .AllowAnyHeader();
             }));
 
-            services.AddHttpClient<IHttpClientWrapper, HttpClientWrapper>(
-                //"TMDbClient",
-                //client =>
-                //{
-                //    client.BaseAddress = new Uri(TMDbApiConfig.BaseUri);
-                //}
-            )
+            services.AddHttpClient<IHttpClientWrapper, HttpClientWrapper>()
             .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
             {
                 TimeSpan.FromSeconds(1),
