@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Polly;
+using UpcomingMovies.Common.Http.Connection;
+using UpcomingMovies.Domain.Repositories;
+using UpcomingMovies.Domain.Services;
+using UpcomingMovies.Infra.Data.Api;
+using UpcomingMovies.Infra.Data.Repositories;
 
 namespace UpcomingMovies.WebApi
 {
@@ -25,6 +25,34 @@ namespace UpcomingMovies.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options => options.AddPolicy("AllAllowed", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
+            services.AddHttpClient<IHttpClientWrapper, HttpClientWrapper>(
+                //"TMDbClient",
+                //client =>
+                //{
+                //    client.BaseAddress = new Uri(TMDbApiConfig.BaseUri);
+                //}
+            )
+            .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[]
+            {
+                TimeSpan.FromSeconds(1),
+                TimeSpan.FromSeconds(2),
+                TimeSpan.FromSeconds(3),
+                TimeSpan.FromSeconds(5),
+            }));
+
+            services.AddScoped<ITMDbApi, TMDbApi>();
+            services.AddScoped<IMovieRepository, MovieRepository>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IGenreService, GenreService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -39,7 +67,7 @@ namespace UpcomingMovies.WebApi
             {
                 app.UseHsts();
             }
-
+            app.UseCors("AllAllowed");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
