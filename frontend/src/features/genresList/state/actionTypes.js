@@ -1,0 +1,6 @@
+export const LIST_GENRES = "LIST_GENRES";
+
+export const SET_GENRES = "SET_GENRES";
+export const SET_IS_LOADING_GENRES = "SET_IS_LOADING_GENRES";
+export const SELECT_GENRE = "SELECT_GENRE";
+
