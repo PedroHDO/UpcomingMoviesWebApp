@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import api from '../../../common/api';
+import { movieService, genreService } from '../../../services';
 import MoviesList from '../moviesList';
 import * as types from '../../genresList/state/actionTypes';
 
@@ -19,7 +19,7 @@ const SearchMoviesList = ({ searchTerm, setGenres }) => {
     }
 
     async function fetchGenresAsync() {
-        const genres = await api.getGenresList();
+        const genres = await genreService.list();
         setGenres(genres);
     }
 
@@ -31,7 +31,7 @@ const SearchMoviesList = ({ searchTerm, setGenres }) => {
     }
 
     async function fetchMoviesAsync(page) {
-        const result = await api.searchMovies(searchTerm, page);
+        const result = await movieService.search(searchTerm, page);
         setPage(page);
         setData(prevState => ([...prevState.concat(result)]));
             setIsFetching(false);

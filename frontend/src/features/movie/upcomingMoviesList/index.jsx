@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import api from '../../../common/api';
+import { movieService, genreService } from '../../../services';
 import MoviesList from '../moviesList';
 import * as types from '../../genresList/state/actionTypes';
 
@@ -21,7 +21,7 @@ const UpcomingMoviesList = ({ setGenres }) => {
     }
 
     async function fetchGenresAsync() {
-        const genres = await api.getGenresList();
+        const genres = await genreService.list();
         setGenres(genres);
     }
 
@@ -32,7 +32,7 @@ const UpcomingMoviesList = ({ setGenres }) => {
     }
 
     async function fetchMoviesAsync(page) {
-        const result = await api.getUpcomingMovies(page);
+        const result = await movieService.getUpcomingMovies(page);
         setPage(page);
         setData(prevState => ([...prevState.concat(result)]));
             setIsFetching(false);

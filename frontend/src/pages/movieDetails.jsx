@@ -1,6 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import api from '../common/api';
+import { movieService } from '../services';
 import MovieDetailsCard from '../features/movie/movieDetailsCard';
 
 const MovieDetails = () => {
@@ -13,7 +13,7 @@ const MovieDetails = () => {
     }, [location]);
 
     async function fetchData() {
-        const result = await api.getMovie(id);
+        const result = await movieService.get(id);
         setMovie(result);        
         setIsFetching(false);
     } 

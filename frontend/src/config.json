@@ -1,10 +1,3 @@
 {
-    "apiUrl" : "https://localhost:44320/api/",
-    "endpoints": 
-    {
-        "upcomingMovies" : "movie/upcoming",
-        "searchMovies" : "movie/search",
-        "movie" : "movie",
-        "genre" : "genre"
-    }
+    "apiUrl" : "https://localhost:44320/api/"    
 }
