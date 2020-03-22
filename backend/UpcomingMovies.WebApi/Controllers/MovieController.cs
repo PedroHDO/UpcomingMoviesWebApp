@@ -9,7 +9,6 @@ namespace UpcomingMovies.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [DisableCors]
     public class MovieController : ControllerBase
     {
         private readonly IMovieService service;
