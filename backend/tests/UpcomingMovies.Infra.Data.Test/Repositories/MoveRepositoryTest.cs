@@ -16,7 +16,7 @@ namespace UpcomingMovies.Infra.Data.Test.Repositories
         {
             var apiMock = new Mock<ITMDbApi>();
             var response = GetTMDbApiSuccessedResponse();
-            apiMock.Setup(mock => mock.GetUpcomingMoviesAsync(It.IsAny<ApiQueryStringBuilder>())).ReturnsAsync(response);
+            apiMock.Setup(mock => mock.GetUpcomingMoviesAsync(It.IsAny<QueryStringBuilder>())).ReturnsAsync(response);
 
             var repository = new MovieRepository(apiMock.Object);
 

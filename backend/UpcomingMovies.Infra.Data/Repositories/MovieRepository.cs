@@ -4,7 +4,6 @@ using System.Linq;
 using UpcomingMovies.Domain.Entities;
 using UpcomingMovies.Domain.Repositories;
 using UpcomingMovies.Infra.Data.Api;
-using UpcomingMovies.Infra.Data.Entities;
 using UpcomingMovies.Infra.Data.Enum;
 using UpcomingMovies.Infra.Data.Mapping;
 
@@ -36,9 +35,9 @@ namespace UpcomingMovies.Infra.Data.Repositories
 
             return movies;
         }
-        private ApiQueryStringBuilder GetParameter(int page)
+        private QueryStringBuilder GetParameter(int page)
         {
-            var filter = new ApiQueryStringBuilder();
+            var filter = new QueryStringBuilder();
             filter.Equal(QueryStringField.page, page);
 
             return filter;

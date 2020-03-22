@@ -27,7 +27,7 @@ namespace UpcomingMovies.Infra.Data.Api
             return client;
         }
 
-        public async Task<MovieResponseCollection> GetUpcomingMoviesAsync(ApiQueryStringBuilder queryString = null)
+        public async Task<MovieResponseCollection> GetUpcomingMoviesAsync(QueryStringBuilder queryString = null)
         {
             var response = await GetDataClient().GetStringAsync(TMDbApiConfig.UpcomingMoviesEndpoint, queryString?.ToString());
 
@@ -54,7 +54,7 @@ namespace UpcomingMovies.Infra.Data.Api
             return genreResponse;
         }
 
-        public async Task<MovieResponseCollection> SearchMoviesAsync(ApiQueryStringBuilder queryString = null)
+        public async Task<MovieResponseCollection> SearchMoviesAsync(QueryStringBuilder queryString = null)
         {
             var response = await GetDataClient().GetStringAsync(TMDbApiConfig.SearchMoviesEndpoint, queryString?.ToString());
 
