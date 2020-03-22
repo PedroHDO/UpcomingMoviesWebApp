@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { movieService, genreService } from '../../../services';
 import MoviesList from '../moviesList';
 import * as types from '../../genresList/state/actionTypes';
+import useInfiniteScroll from '../../../common/infiniteScroll';
 
 const SearchMoviesList = ({ searchTerm, setGenres }) => { 
     const [data, setData] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
-    const [currentPage, setPage] = useState(1);
+    const [currentPage, setPage] = useState(1);    
+    const [isEndOfPage, eventWasTrigger] = useInfiniteScroll();
     const startPage = 1;
     
     useEffect(() => {
@@ -32,29 +34,23 @@ const SearchMoviesList = ({ searchTerm, setGenres }) => {
 
     async function fetchMoviesAsync(page) {
         const result = await movieService.search(searchTerm, page);
-        setPage(page);
-        setData(prevState => ([...prevState.concat(result)]));
-            setIsFetching(false);
+        if (result.length) {
+            setPage(page);
+            setData(prevState => ([...prevState.concat(result)]));        
+            eventWasTrigger();  
+        }
+        setIsFetching(false);            
     }   
-    
+
     useEffect(() => {
-        if (!isFetching) return;
+        if (!isEndOfPage) return;
         fetchMoreListItems();
-    }, [isFetching]);
+    }, [isEndOfPage]);
 
     function fetchMoreListItems()
     {
+        setIsFetching(true);  
         setTimeout(() => { fetchMoviesAsync(currentPage + 1) }, 500);
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    function handleScroll() {
-        if (window.innerHeight + document.documentElement.scrollTop + 200 < document.documentElement.offsetHeight) return;
-        setIsFetching(true);
     }
 
     return (
