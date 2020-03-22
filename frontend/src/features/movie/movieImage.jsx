@@ -1,8 +1,9 @@
 import React from 'react';
 import noImage from './noImage.png';
+import config from '../../config.json';
 
 const MovieImage = ({imageSrc}) => {   
-    const baseurl = "https://localhost:44320/api/image/";    
+    const baseurl = config.apiUrl + "image/";    
     function getImageUrl()
     {
         if (imageSrc)
