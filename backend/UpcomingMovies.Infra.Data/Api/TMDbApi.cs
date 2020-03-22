@@ -27,9 +27,9 @@ namespace UpcomingMovies.Infra.Data.Api
             return client;
         }
 
-        public async Task<MovieResponseCollection> GetUpcomingMoviesAsync(QueryStringBuilder queryString = null)
+        public async Task<MovieResponseCollection> GetUpcomingMoviesAsync(QueryStringBuilder queryString)
         {
-            var response = await GetDataClient().GetStringAsync(TMDbApiConfig.UpcomingMoviesEndpoint, queryString?.ToString());
+            var response = await GetDataClient().GetStringAsync(TMDbApiConfig.UpcomingMoviesEndpoint, queryString.ToString());
 
             var movieResponseCollection = JsonConverter.Deserialize<MovieResponseCollection>(response);
 
@@ -54,9 +54,9 @@ namespace UpcomingMovies.Infra.Data.Api
             return genreResponse;
         }
 
-        public async Task<MovieResponseCollection> SearchMoviesAsync(QueryStringBuilder queryString = null)
+        public async Task<MovieResponseCollection> SearchMoviesAsync(QueryStringBuilder queryString)
         {
-            var response = await GetDataClient().GetStringAsync(TMDbApiConfig.SearchMoviesEndpoint, queryString?.ToString());
+            var response = await GetDataClient().GetStringAsync(TMDbApiConfig.SearchMoviesEndpoint, queryString.ToString());
 
             var movieResponseCollection = JsonConverter.Deserialize<MovieResponseCollection>(response);
 

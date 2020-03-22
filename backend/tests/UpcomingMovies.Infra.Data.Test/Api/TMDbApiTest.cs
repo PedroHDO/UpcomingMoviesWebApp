@@ -11,22 +11,22 @@ namespace UpcomingMovies.Infra.Data.Test.Api
     public class TMDbApiTest
     {
         [Fact]
-        public void GetUpcomingMovies_WhenSuccessed_ShouldReturnTheDiscoverMovieResponse()
+        public void GetUpcomingMovies_WhenSuccessed_ShouldReturnMovieResponseCollection()
         {
             var clientMock = new Mock<IHttpClientWrapper>();
             clientMock.Setup(mock =>
                              mock.GetStringAsync(TMDbApiConfig.UpcomingMoviesEndpoint, It.IsAny<string>())
                        )
                       .ReturnsAsync(ApiResponsesMother.DiscoverMovieSuccessedResponse);
-
+            var queryString = new QueryStringBuilder();
             var api = new TMDbApi(clientMock.Object);
 
-            var apiResponse = api.GetUpcomingMoviesAsync().Result;
+            var apiResponse = api.GetUpcomingMoviesAsync(queryString).Result;
 
-            apiResponse.Should().BeEquivalentTo(GetDiscoverMovieExpectedSuccessedResponse());
+            apiResponse.Should().BeEquivalentTo(GetUpcomingExpectedSuccessedResponse());
         }
 
-        private MovieResponseCollection GetDiscoverMovieExpectedSuccessedResponse()
+        private MovieResponseCollection GetUpcomingExpectedSuccessedResponse()
         {
             var response = new MovieResponseCollection()
             {
