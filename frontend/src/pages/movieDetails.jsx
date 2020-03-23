@@ -17,7 +17,7 @@ const MovieDetails = () => {
         }
 
         fetchData();
-    }, [location]);
+    }, [id, location]);
     
     return (
         <div>
