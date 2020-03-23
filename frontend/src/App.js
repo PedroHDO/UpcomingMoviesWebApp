@@ -28,6 +28,9 @@ class App extends Component {
               <UpcomingMoviesPage />
             </Route>            
           </Switch>
+          <footer className="footer">
+            <p>Developed by <a href='https://github.com/PedroHDO/UpcomingMoviesWebApp'>@PedroHDO</a></p>
+          </footer>
         </div>
       </Router>
     );
