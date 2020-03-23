@@ -15,8 +15,8 @@ The project was builded with a react app on Frontend, connection with a .net cor
 
 ### Backend
 - Web Api - To provide the entrypoints
-- Domain - To centralize the application's domain
-- Infra.Data - To provide the data to Domain, connecting with the TMDbApi 
+- Domain - To centralize the application's domain. (Entities, Services, IRepositories)
+- Infra.Data - To provide the data to Domain, connecting with the TMDbApi (Repositories implementations, Mapping)
 - Common - To generic things shared between the project
 
 ## Assumptions
