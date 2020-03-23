@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -10,9 +10,15 @@ import NavbarMenu from './components/navbar';
 import UpcomingMoviesPage from './pages/upcomingMovies';
 import SearchMoviesPage from './pages/searchMovies';
 import MovieDetails from './pages/movieDetails';
+import useGenres from './features/genres/useGenres';
 
-class App extends Component {  
-  render() {   
+const App = () => {  
+    const { fetchGenres } = useGenres();
+    
+    useEffect(() => {
+        fetchGenres();        
+    }, []);  
+
     return (
       <Router>
         <div className='container'>
@@ -33,8 +39,7 @@ class App extends Component {
           </footer>
         </div>
       </Router>
-    );
-  }
+    );  
 }
 
 export default App;

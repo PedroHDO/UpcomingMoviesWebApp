@@ -7,16 +7,17 @@ const MovieDetails = () => {
     let { id } = useParams();
     const { location } = useLocation();
     const [movie, setMovie] = useState([]);
-    const [isFetching, setIsFetching] = useState(true);
+    const [isFetching, setIsFetching] = useState(true);     
+
     useEffect(() => {
+        async function fetchData() {
+            const result = await movieService.get(id);
+            setMovie(result);        
+            setIsFetching(false);
+        }
+
         fetchData();
     }, [location]);
-
-    async function fetchData() {
-        const result = await movieService.get(id);
-        setMovie(result);        
-        setIsFetching(false);
-    } 
     
     return (
         <div>

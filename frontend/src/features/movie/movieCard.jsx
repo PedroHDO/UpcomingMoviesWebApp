@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import MovieImage from './movieImage.jsx';
-import GenreList from '../genresList';
+import GenreList from '../genres/list';
 import DateFormater from '../../common/dateFormater';
 
 const MovieCard = ({movie}) => {  

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { movieService, genreService } from '../../../services';
+import { movieService } from '../../../services';
 import MoviesList from '../moviesList';
-import * as types from '../../genresList/state/actionTypes';
 import useInfiniteScroll from '../../../common/infiniteScroll';
+
 
 const UpcomingMoviesList = ({ setGenres }) => { 
     const { location } = useLocation();
@@ -14,24 +13,14 @@ const UpcomingMoviesList = ({ setGenres }) => {
     const [isEndOfPage, eventWasTrigger] = useInfiniteScroll();
     const startPage = 1;
     
-    useEffect(() => {
-         fetchData();
-    }, [location]);    
-    
-    function fetchData() {
+    useEffect(() => {    
+        async function fetchDataAsync() {        
+            setIsFetching(true);
+            await fetchMoviesAsync(startPage);          
+        }
+
         fetchDataAsync();
-    }
-
-    async function fetchGenresAsync() {
-        const genres = await genreService.list();
-        setGenres(genres);
-    }
-
-    async function fetchDataAsync() {        
-        setIsFetching(true);
-        await fetchGenresAsync();
-        await fetchMoviesAsync(startPage);          
-    }
+    }, [location]);    
 
     async function fetchMoviesAsync(page) {
         const result = await movieService.getUpcomingMovies(page);
@@ -52,20 +41,13 @@ const UpcomingMoviesList = ({ setGenres }) => {
     {
         setIsFetching(true);
         setTimeout(() => fetchMoviesAsync(currentPage + 1), 500);
-    }
-
-    
+    }   
 
     return (
         <MoviesList movies={data} isFetching={isFetching} />
     );
 }
-const mapStateToProps = (props) => props;
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setGenres: (genres) => dispatch({ type: types.SET_GENRES, payload: genres }),
-    }
- };
 
- export default connect(mapStateToProps, mapDispatchToProps)(UpcomingMoviesList);
+
+ export default UpcomingMoviesList;
 

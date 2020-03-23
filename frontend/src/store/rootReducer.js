@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import genre from '../features/genresList/state/genreReducer';
+import genre from '../features/genres/state/genreReducer';
 
 export default combineReducers({genre});

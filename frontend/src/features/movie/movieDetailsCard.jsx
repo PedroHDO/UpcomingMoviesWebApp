@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import MovieImage from './movieImage';
-import GenreList from '../genresList';
+import GenreList from '../genres/list';
+import useGenres from '../genres/useGenres';
 import DateFormater from '../../common/dateFormater';
 
-const MovieDetailsCard = ({movie}) => {    
+const MovieDetailsCard = ({movie}) => {
+    const { fetchGenres } = useGenres();
+    
+    useEffect(() => {
+        fetchGenres();        
+    }, []);  
+
     return (
         <div className='row'>
             <div className='col-md-6'>
