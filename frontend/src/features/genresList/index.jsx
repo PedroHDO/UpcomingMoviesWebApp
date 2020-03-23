@@ -5,7 +5,8 @@ import  { getGenresById } from './state/selector';
 const GenreList = ({ genres, genreIds }) => {
     function getGenreName(genreId) {
         const genre = getGenresById(genres, genreId);
-        return genre.name;
+        if (genre)
+            return genre.name;
     }
 
     if (!genreIds) {
