@@ -2,17 +2,17 @@ import { useEffect, useState } from 'react';
 
 const useInfiniteScroll = () => {
     const [isEndOfPage, setIsEndOfPage] = useState(false);
+    
+    function handleScroll() {        
+        if (isEndOfPage) return;
+
+        if (window.innerHeight + document.documentElement.scrollTop + 200 
+            < document.documentElement.offsetHeight) return;
+        
+        setIsEndOfPage(true);
+    }
 
     useEffect(() => {
-        function handleScroll() {        
-            if (isEndOfPage) return;
-    
-            if (window.innerHeight + document.documentElement.scrollTop + 200 
-                < document.documentElement.offsetHeight) return;
-            
-            setIsEndOfPage(true);
-        }
-        
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
